@@ -1,27 +1,34 @@
 <template>
-  <div id="app">
-    <vue-navbar></vue-navbar>
-    <router-view></router-view>
+  <div id="app" class="app">
+    <auth-layout v-if="isAuth"></auth-layout>
+    <layout v-else></layout>
   </div>
 </template>
 
 <script>
-  import VueNavbar from './components/Navbar'
-  import VueLogin from './components/authentication/Login'
-  import VueRegister from './components/authentication/Register'
+  import Layout from './components/layout/Layout'
+  import AuthLayout from './components/layout/AuthLayout'
+
   export default {
     name: 'app',
     components: {
-      VueNavbar,
-      VueLogin,
-      VueRegister
+      AuthLayout,
+      Layout
     },
-    data () {
-      return {}
+    computed: {
+      isAuth () {
+        return this.$route.path.match('auth')
+      }
     }
   }
 </script>
 
 <style lang="scss">
   @import "./sass/main";
+  body {
+    height: 100%;
+    .app {
+      height: 100%;
+    }
+  }
 </style>
