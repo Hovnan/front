@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //
 import Dashboard from '../components/dashboard/Dashboard'
+import Feed from '../components/feed/Feed'
 import List from '../components/list/List'
 import Login from '../components/auth/login/Login'
 import Signup from '../components/auth/signup/Signup'
@@ -39,6 +40,13 @@ const router = new VueRouter({
     {
       path: '/dashboard',
       component: Dashboard,
+      meta: {
+        forAuth: true
+      }
+    },
+    {
+      path: '/feed',
+      component: Feed,
       meta: {
         forAuth: true
       }

@@ -10,6 +10,9 @@
           <router-link class="nav-link" to="/dashboard">Home</router-link>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link" to="/feed">Feed</router-link>
+        </li>
+        <li class="nav-item">
           <router-link class="nav-link" to="/list">ToGo List</router-link>
         </li>
         <li class="nav-item">
