@@ -15,7 +15,7 @@ const state = {
       center: {"lat":59.64165449249,"lng":71.20819433322},
     },
     // must be changed after passport install comand(in back side)
-    client_secret: 'wcMRri8S7sF7Q6QYvjzAkM7BpLpdMJayMBK4vfPV',
+    client_secret: 'VsRYkmy1nMeQnaU25hMedWjdh2HiGivjiiVIQyEL',
     client_id: 2,
     grant_type: 'password'
   }

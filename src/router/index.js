@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //
 import Dashboard from '../components/dashboard/Dashboard'
+import Create from '../components/product/Create'
+import Edit from '../components/product/Edit'
 import Feed from '../components/feed/Feed'
 import List from '../components/list/List'
 import Login from '../components/auth/login/Login'
@@ -52,6 +54,20 @@ const router = new VueRouter({
       }
     },
     {
+      path: '/products/create',
+      component: Create,
+      meta: {
+        forAuth: true
+      }
+    },
+    {
+      path: '/products/:product/edit',
+      component: Edit,
+      meta: {
+        forAuth: true
+      }
+    },
+    {
       path: '/not-found',
       component: NotFound
     },
@@ -63,7 +79,8 @@ const router = new VueRouter({
       path: '*',
       component: NotFound
     }
-  ]
+  ],
+  linkActiveClass: 'active'
 })
 
 export default router

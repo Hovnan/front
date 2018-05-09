@@ -1,33 +1,15 @@
 <template>
   <div id="feed">
     <h1>Feed</h1>
-    <ul>
-      <li v-for="product in products">
-        {{product.name}} | {{product.price}}
-      </li>
-    </ul>
+    <vue-products></vue-products>
   </div>
 </template>
 <script>
-
+  import VueProducts from '../product/Products.vue'
   export default {
     name: 'feed',
-    data() {
-      return {
-        products: []
-      }
-    },
-    created() {
-      //  get products
-      this.$http.get('api/products')
-        .then(response => {
-          this.products = response.data;
-        });
-    },
-    methods: {
-//      ...mapActions([
-//        'addNewMarker',
-//      ])
+    components: {
+      VueProducts
     }
   }
 </script>

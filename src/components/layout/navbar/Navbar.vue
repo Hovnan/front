@@ -13,6 +13,9 @@
           <router-link class="nav-link" to="/feed">Feed</router-link>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link" to="/products/create">Create New Product</router-link>
+        </li>
+        <li class="nav-item">
           <router-link class="nav-link" to="/list">ToGo List</router-link>
         </li>
         <li class="nav-item">
@@ -27,6 +30,11 @@
   import { mapGetters, mapActions } from 'vuex'
   export default {
     name: 'navbar',
+    data() {
+      return {
+        isAuth: null
+      }
+    },
     created: function() {
       this.$http.get('api/user')
         .then(response => this.setAuthenticatedUser(response.body))

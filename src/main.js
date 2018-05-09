@@ -23,7 +23,12 @@ Vue.http.interceptors.push((request, next) => {
   request.headers.set('Accept', 'application/json')
   next(response => {
     if(response.status == 404) {
-      router.push('not-found');
+      // router.push('not-found');
+      this.$swal(
+        response.status.toString(),
+        response.data.error,
+        'error'
+      )
     } else if(response.status == 500) {
       router.push('server-error');
     } else if(response.status == 401 ) {
